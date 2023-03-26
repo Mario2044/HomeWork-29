@@ -1,4 +1,4 @@
-const categoriesList = document.querySelector('.categories ul');
+/*const categoriesList = document.querySelector('.categories ul');
 const productsDiv = document.querySelector('.products');
 const productInfoDiv = document.querySelector('.product-info');
 
@@ -66,3 +66,4 @@ productInfoDiv.addEventListener('click', event => {
     productInfoDiv.innerHTML = '';
   }
 });
+*/

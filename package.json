@@ -1,0 +1,11 @@
+{
+  "name": "test_work",
+  "version": "0.0.0",
+  "description": "test description",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
