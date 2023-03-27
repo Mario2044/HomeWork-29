@@ -1,69 +1,63 @@
-/*const categoriesList = document.querySelector('.categories ul');
-const productsDiv = document.querySelector('.products');
-const productInfoDiv = document.querySelector('.product-info');
+let categoriesList = document.querySelector('.categories ul');
+let productDiv = document.querySelector('.products');
+let productInfoDiv = document.querySelector('.product-info');
 
-// Список категорій і товарів
-const products = {
+let products = {
   electronics: [
-    { name: 'Смартфон', price: 10000 },
-    { name: 'Ноутбук', price: 20000 },
-    { name: 'Телевізор', price: 30000 }
+    { name: 'Смартфон', price: 5500 },
+    { name: 'Електрочайник', price: 2500 },
+    { name: 'Увлажнитель воздуха', price: 1750 }
   ],
   clothes: [
-    { name: 'Футболка', price: 500 },
-    { name: 'Джинси', price: 1000 },
-    { name: 'Кофта', price: 1500 }
+    { name: 'Шорты', price: 500 },
+    { name: 'Джинсы', price: 1500 },
+    { name: 'Куртка', price: 1750 }
   ],
   books: [
-    { name: 'JavaScript. Підручник', price: 500 },
-    { name: 'Harry Potter', price: 800 },
-    { name: 'Три мушкетери', price: 1000 }
+    { name: 'Звездная Бабочка - Бернар Вербер', price: 400 },
+    { name: 'Мастер на все руки', price: 350 },
+    { name: 'Енциклопедия', price: 750 }
   ]
 };
 
-// Відображення категорій
 Object.keys(products).forEach(category => {
-  const li = document.createElement('li');
+  let li = document.createElement('li');
   li.textContent = category;
   li.dataset.category = category;
   categoriesList.appendChild(li);
 });
 
-// Обробка кліків на категоріях
 categoriesList.addEventListener('click', event => {
   if (event.target.tagName === 'LI') {
-    const selectedCategory = event.target.dataset.category;
-    const selectedProducts = products[selectedCategory];
-    const productsHTML = selectedProducts.map(product => {
+    let selectCategory = event.target.dataset.category;
+    let selectProducts = products[selectCategory];
+    let productsHtml = selectProducts.map(product => {
       return `<div class="product" data-name="${product.name}" data-price="${product.price}">
-                <h3>${product.name}</h3>
-                <p>${product.price} грн</p>
-              </div>`;
+      <h3>${product.name}</h3>
+      <p>${product.price} грн</p>
+      </div>`;
     }).join('');
-    productsDiv.innerHTML = productsHTML;
+    productDiv.innerHTML = productsHtml;
   }
 });
 
-// Обробка кліків на товарах
-productsDiv.addEventListener('click', event => {
+productDiv.addEventListener('click', event => {
   if (event.target.classList.contains('product')) {
     const name = event.target.dataset.name;
     const price = event.target.dataset.price;
     const productInfoHTML = `
       <h2>${name}</h2>
       <p>${price} грн</p>
-      <button class="buy">Купити</button>
+      <button class="buy">Купить</button>
     `;
     productInfoDiv.innerHTML = productInfoHTML;
   }
 });
 
-// Обробка кліків на кнопці купити
 productInfoDiv.addEventListener('click', event => {
   if (event.target.classList.contains('buy')) {
-    alert('Товар куплений');
-    productsDiv.innerHTML = '';
+    alert('Товар куплен');
+    productDiv.innerHTML = '';
     productInfoDiv.innerHTML = '';
   }
 });
-*/
