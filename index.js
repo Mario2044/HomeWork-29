@@ -1,6 +1,8 @@
 let categoriesList = document.querySelector('.categories ul');
 let productDiv = document.querySelector('.products');
 let productInfoDiv = document.querySelector('.product-info');
+let ordersBtn = document.querySelector('.ordersBtn');
+let ordersEl = document.querySelector('orders');
 
 let products = {
   electronics: [
@@ -62,4 +64,19 @@ productInfoDiv.addEventListener('click', event => {
   }
 });
 
-let orders = JSON.parse(localStorage.getItem("orders")) || [];
+let orders = JSON.parse(localStorage.getItem("products")) || [];
+
+localStorage.setItem("Basket", JSON.stringify(products));
+
+const buyButton = productInfoDiv.querySelector('.buy');
+
+const product = productDiv.querySelector(".product");
+
+function handleClick() {
+  // Сохраняем информацию о товаре "обувь" в Local Storage
+  localStorage.setItem('selectedItem', product.dataset.name);
+  console.log('Информация о товаре "обувь" сохранена в Local Storage');
+}
+
+// Добавляем обработчик события "click" на кнопку
+buyButton.addEventListener('click', handleClick);
