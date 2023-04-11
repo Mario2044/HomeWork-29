@@ -61,3 +61,5 @@ productInfoDiv.addEventListener('click', event => {
     productInfoDiv.innerHTML = '';
   }
 });
+
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
